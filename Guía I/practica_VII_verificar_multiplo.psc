@@ -11,8 +11,8 @@ Algoritmo practica_VII_verificar_multiplo
 	resto<- a MOD b;
 	
 	Si (resto=0)
-		Escribir "A es múltiplo de B";
+		Escribir "A es mÃºltiplo de B";
 	SiNo
-		Escribir "A no es múltiplo de B";
+		Escribir "A no es mÃºltiplo de B";
 	FinSi
 FinAlgoritmo
