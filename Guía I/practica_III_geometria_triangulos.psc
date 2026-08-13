@@ -15,6 +15,6 @@ Algoritmo practica_III_geometria_triangulos
 	perimetro<- catetoMenor+catetoMayor+hipotenusa;
 	
 	Escribir "Hipotenusa:", hipotenusa;
-	Escribir "Área:", area;
-	Escribir "Perímetro:", perimetro;
+	Escribir "Ãrea:", area;
+	Escribir "PerÃ­metro:", perimetro;
 FinAlgoritmo
