@@ -4,14 +4,14 @@ Algoritmo promedioDeVector
 	Definir contador Como Entero;
 	Definir sumaDelVector Como Entero;
 	
-	Escribir "Ingrese la cantidad de índices del vector a promediar:";
+	Escribir "Ingrese la cantidad de Ã­ndices del vector a promediar:";
 	Leer indices;
 	
 	Dimension vector[indices];
 	sumaDelVector <- 0;
 	
 	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese el valor del índice ", contador, ":";
+		Escribir "Ingrese el valor del Ã­ndice ", contador, ":";
 		Leer vector[contador];
 	FinPara
 	
