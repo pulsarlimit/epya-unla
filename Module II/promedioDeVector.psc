@@ -1,3 +1,4 @@
+// Arreglos unidimensionales, Ejercicio 1 
 Algoritmo promedioDeVector
 	Definir vector Como Entero;
 	Definir indices Como Entero;
