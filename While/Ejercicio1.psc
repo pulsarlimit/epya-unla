@@ -1,13 +1,13 @@
-// Práctica Estructura Mientras, Ejercicio I
+// PrÃ¡ctica Estructura Mientras, Ejercicio I
 Algoritmo Ejercicio1_bis
 	Definir num_ingresado Como Entero;
 	Definir min, max Como Entero;
 	Definir entrada_valida Como Logico;
-	Escribir "Ingrese números del 1 al 10, puede parar el programa ingresando -1:";
+	Escribir "Ingrese nÃºmeros del 1 al 10, puede parar el programa ingresando -1:";
 	Hacer
 		Leer num_ingresado;
 		Si (num_ingresado < -1 O num_ingresado > 10 O num_ingresado = 0) Entonces
-			Escribir "El rango de números permitidos es del 1 al 10";
+			Escribir "El rango de nÃºmeros permitidos es del 1 al 10";
 			entrada_valida <- falso;
 		SiNo
 			entrada_valida <- verdadero;
@@ -30,7 +30,7 @@ Algoritmo Ejercicio1_bis
 		Hacer
 			Leer num_ingresado;
 			Si (num_ingresado < -1 O num_ingresado > 10 O num_ingresado = 0) Entonces
-				Escribir "El rango de números permitidos es del 1 al 10";
+				Escribir "El rango de nÃºmeros permitidos es del 1 al 10";
 				entrada_valida <- Falso;
 			SiNo
 				entrada_valida <- Verdadero;
@@ -38,6 +38,6 @@ Algoritmo Ejercicio1_bis
 		Hasta Que (entrada_valida)
 	FinMientras
 	Borrar Pantalla;
-	Escribir "El número más pequeño ingresado fue: ", min;
-	Escribir "El número más grande ingresado fue: ", max;
+	Escribir "El nÃºmero mÃ¡s pequeÃ±o ingresado fue: ", min;
+	Escribir "El nÃºmero mÃ¡s grande ingresado fue: ", max;
 FinAlgoritmo
