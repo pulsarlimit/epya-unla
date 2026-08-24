@@ -1,4 +1,7 @@
 // Práctica Estructura Mientras, Ejercicio 1
+// Solicitar al usuario que ingrese múltiples números del 1 al 10 hasta que ingrese el número -1. El algoritmo
+// deberá mostrar el número máximo y el número mínimo ingresado por el usuario.
+
 Algoritmo Ejercicio1
 	Definir num_ingresado Como Entero;
 	Definir min, max Como Entero;
