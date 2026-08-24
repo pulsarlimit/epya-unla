@@ -1,7 +1,7 @@
 // Arreglos unidimensionales, Ejercicio 1
 // Diseñar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
 // positivos calcular la media.
-Algoritmo promedioDeVector
+Algoritmo Ejercicio1
 	Definir vector Como Entero;
 	Definir indices Como Entero;
 	Definir contador Como Entero;

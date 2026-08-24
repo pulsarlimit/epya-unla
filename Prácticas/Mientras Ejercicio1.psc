@@ -1,5 +1,5 @@
-// Práctica Estructura Mientras, Ejercicio I
-Algoritmo Ejercicio1_bis
+// Práctica Estructura Mientras, Ejercicio 1
+Algoritmo Ejercicio1
 	Definir num_ingresado Como Entero;
 	Definir min, max Como Entero;
 	Definir entrada_valida Como Logico;
