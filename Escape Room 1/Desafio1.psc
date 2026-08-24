@@ -1,4 +1,6 @@
 // Escape Room 1, Desafío 1
+// Debes encontrar el primer número de tres cifras que cumple la siguiente propiedad: la suma
+// de los cubos de sus cifras es igual al número en sí mismo.
 Algoritmo Desafio1
 	Definir i Como Entero;
 	Definir tope Como Entero;
