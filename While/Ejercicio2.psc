@@ -1,4 +1,4 @@
-// Pr·ctica Estructura Mientras, Ejercicio II
+// Pr√°ctica Estructura Mientras, Ejercicio II
 Algoritmo Ejercicio2
 	Definir temp Como Entero;
 	Definir cant_checks Como Entero;
