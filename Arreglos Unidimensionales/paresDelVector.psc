@@ -1,23 +1,25 @@
 // Arreglos unidimensionales, Ejercicio 4
+// Dise√±ar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
+// positivos encontrar la cantidad n√∫meros pares.
 Algoritmo paresDelVector
 	Definir vector Como Entero;
 	Definir indices Como Entero;
 	Definir contador Como Entero;
 	Definir indicesPares Como Entero;
 	
-	Escribir "Ingrese la cantidad de Ìndices que tendr· el vector:";
+	Escribir "Ingrese la cantidad de √≠ndices que tendr√° el vector:";
 	Leer indices;
 	
 	indicesPares <- 0;
 	Dimension vector[indices];
 	
 	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+		Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 		Hacer
 			Leer vector[contador];
 			Si (vector[contador] < 1) Entonces
 				Escribir "Solo se pueden ingresar valores positivos";
-				Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+				Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 			FinSi
 		Hasta Que (vector[contador] > 0)
 		Si (vector[contador] MOD 2 = 0) Entonces

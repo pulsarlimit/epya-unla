@@ -1,4 +1,4 @@
-// Escape Room I, Desafío I
+// Escape Room 1, Desafío 1
 Algoritmo Desafio1
 	Definir i Como Entero;
 	Definir tope Como Entero;

@@ -1,4 +1,6 @@
 // Arreglos unidimensionales, Ejercicio 3
+// Dise√±ar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
+// positivos encontrar el n√∫mero menor y la posici√≥n que se encuentra.
 Algoritmo menorDelVector
 	Definir vector Como Entero;
 	Definir indices Como Entero;
@@ -6,7 +8,7 @@ Algoritmo menorDelVector
 	Definir indiceMenorValor Como Entero;
 	Definir cualIndice Como Entero;
 	
-	Escribir "Ingrese la cantidad de Ìndices que tendr· el vector:";
+	Escribir "Ingrese la cantidad de √≠ndices que tendr√° el vector:";
 	Leer indices;
 	
 	// indiceMenorValor <- 2 ^ 16;
@@ -16,12 +18,12 @@ Algoritmo menorDelVector
 	Dimension vector[indices];
 	
 	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+		Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 		Hacer
 			Leer vector[contador];
 			Si vector[contador] < 1 Entonces
 				Escribir "Solo se pueden ingresar valores positivos";
-				Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+				Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 			FinSi
 		Hasta Que (vector[contador] > 0)
 		Si (contador = 0) Entonces
@@ -34,5 +36,5 @@ Algoritmo menorDelVector
 		FinSi
 	FinPara
 	
-	Escribir "El Ìndice ", cualIndice, " contiene el valor m·s pequeÒo, que es ", indiceMenorValor;	
+	Escribir "El √≠ndice ", cualIndice, " contiene el valor m√°s peque√±o, que es ", indiceMenorValor;	
 FinAlgoritmo

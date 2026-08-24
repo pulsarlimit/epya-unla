@@ -1,4 +1,6 @@
 // Arreglos unidimensionales, Ejercicio 5
+// Dise√±ar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
+// positivos encontrar la cantidad n√∫meros primos.
 Algoritmo primosDelVector
 	Definir vector Como Entero;
 	Definir indices Como Entero;
@@ -6,19 +8,19 @@ Algoritmo primosDelVector
 	Definir dontador Como Entero; // i , j, contador, dontador
 	Definir indicesPrimos Como Entero;
 	
-	Escribir "Ingrese la cantidad de Ìndices que tendr· el vector:";
+	Escribir "Ingrese la cantidad de √≠ndices que tendr√° el vector:";
 	Leer indices;
 	
 	indicesPrimos <- 0;
 	Dimension vector[indices];
 	
 	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+		Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 		Hacer
 			Leer vector[contador];
 			Si (vector[contador] < 1) Entonces
 				Escribir "Solo se pueden ingresar valores positivos";
-				Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+				Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 			FinSi
 		Hasta Que (vector[contador] > 0)
 		Para dontador <- 2 Hasta RC(vector[contador]) Con Paso 1 Hacer
@@ -28,6 +30,6 @@ Algoritmo primosDelVector
  		FinPara
 	FinPara
 	
-	Escribir "En el vector, de ", indices, " Ìndices, solo ", indicesPrimos, " contienen valores primos";
+	Escribir "En el vector, de ", indices, " √≠ndices, solo ", indicesPrimos, " contienen valores primos";
 	
 FinAlgoritmo	

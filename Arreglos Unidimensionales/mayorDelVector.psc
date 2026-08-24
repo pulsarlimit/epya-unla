@@ -1,4 +1,6 @@
 // Arreglos unidimensionales, Ejercicio 2
+// Dise√±ar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
+// positivos encontrar el n√∫mero mayor y la posici√≥n que se encuentra.
 Algoritmo mayorDelVector
 	Definir vector Como Entero;
 	Definir indices Como Entero;
@@ -6,7 +8,7 @@ Algoritmo mayorDelVector
 	Definir indiceMayorValor Como Entero;
 	Definir cualIndice Como Entero;
 	
-	Escribir "Ingrese la cantidad de Ìndices que tendr· el vector:";
+	Escribir "Ingrese la cantidad de √≠ndices que tendr√° el vector:";
 	Leer indices;
 	
 	indiceMayorValor <- 0;
@@ -14,12 +16,12 @@ Algoritmo mayorDelVector
 	Dimension vector[indices];
 	
 	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+		Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 		Hacer
 			Leer vector[contador];
 			Si vector[contador] < 1 Entonces
 				Escribir "Solo se pueden ingresar valores positivos";
-				Escribir "Ingrese un valor para el Ìndice ", contador, ":";
+				Escribir "Ingrese un valor para el √≠ndice ", contador, ":";
 			FinSi
 		Hasta Que (vector[contador] > 0)
 		Si vector[contador] > indiceMayorValor Entonces
@@ -28,5 +30,5 @@ Algoritmo mayorDelVector
 		FinSi
 	FinPara
 	
-	Escribir "El Ìndice ", cualIndice, " contiene el mayor valor, que es ", indiceMayorValor;
+	Escribir "El √≠ndice ", cualIndice, " contiene el mayor valor, que es ", indiceMayorValor;
 FinAlgoritmo
