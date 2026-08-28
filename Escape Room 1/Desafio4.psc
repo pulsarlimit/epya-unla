@@ -1,26 +1,58 @@
-// Escape Room 1, Desafío 4
-// Para abrir los cofres y obtener las dos llaves, debes encontrar el primer par de números
+// Escape Room 1, DesafÃ­o 4
+// Para abrir los cofres y obtener las dos llaves, debes encontrar el primer par de nÃºmeros
 // amigos de cuatro cifras: aquellos donde la suma de los divisores propios de uno es igual al
-// otro número, y viceversa.
+// otro nÃºmero, y viceversa.
 Algoritmo Desafio4
-	Definir n, n_comparado, i Como Entero;
-	Definir suma_div_n, suma_div_n_comparada Como Entero;
-	Definir amigo_encontrado Como Logico;
+    Definir n, i, na, j Como Entero;
+    Definir asdiv, audiv, apdiv Como Entero;
+	Definir sdiv, udiv, pdiv Como Entero;
+	Definir final, subfinal1, subfinal2 Como Logico;
+	
 	n <- 1000;
-	n_comparado <- 1000;
-	suma_div_n <- 0;
-	suma_div_n_comparada <- 0;
-	amigo_encontrado <- Falso;
-	Mientras NO(amigo_encontrado) Hacer
-		Para i <- 1 Hasta n/2 Hacer
-			suma_div_n <- suma_div_n + i;
-		FinPara
-		Para i <- 1 Hasta n_comparado/2 Hacer
-			suma_div_n_comparada <- suma_div_n_comparada + i;
-		FinPara
-		Si (suma_div_n < suma_div_n_comparada) Entonces
-			n_comparado <- n_comparado + 1;
+    final <- Falso;
+
+	Mientras NO(final) Hacer
+	    i <- 2;
+        sdiv <- 1;
+        udiv <- n;
+        subfinal1 <- Falso;
+     
+		Mientras NO(subfinal1) Hacer
+		    Si (n MOD i = 0) Entonces
+			    pdiv <- udiv;
+				udiv <- n / i;
+				Si (pdiv <> i) Entonces
+					sdiv <- sdiv + i + udiv;
+				SiNo
+					subfinal1<- Verdadero;
+					na <- sdiv;
+				FinSi
+			FinSi
+			i <- i + 1;
+		FinMientras
+
+         j <- 2;
+        asdiv <- 1;
+        audiv <- na;
+        subfinal2 <- Falso;
+
+		Mientras NO(subfinal2) Hacer
+			Si (na MOD j = 0) Entonces
+				apdiv <- audiv;
+				audiv <- na / j;
+			    Si (apdiv <> j) Entonces
+				    asdiv <- asdiv + j + audiv;
+				SiNo
+				    subfinal2 <- Verdadero;
+			    FinSi
+			FinSi
+            j <- j +1;
+		FinMientras
+		Si (n = asdiv) Entonces
+			final <- Verdadero;
+		SiNo
+            n <- n + 1;
 		FinSi
 	FinMientras
+     Escribir "La respuesta es: ", n, " y ", na;
 FinAlgoritmo
-// Incompleto
