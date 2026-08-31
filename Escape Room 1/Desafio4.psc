@@ -29,7 +29,7 @@ Algoritmo Desafio4
 			FinSi
             j <- j +1;
 		FinMientras
-		Si (n = asdiv) Entonces
+		Si (n = asdiv) Y (n <> na) Entonces
 			final <- Verdadero;
 		SiNo
 			n <- n + 1;
