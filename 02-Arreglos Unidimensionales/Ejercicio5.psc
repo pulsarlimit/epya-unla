@@ -27,9 +27,8 @@ Algoritmo Ejercicio5
 			Mientras (j <= RC(vector[i]) Y primo) Hacer
 				Si (vector[i] MOD j = 0) Entonces
 					primo <- Falso;
-				SiNo
-					j <- j + 1;
 				FinSi
+				j <- j + 1;
 			FinMientras
 			Si (primo) Entonces
 				c_primos <- c_primos + 1;
