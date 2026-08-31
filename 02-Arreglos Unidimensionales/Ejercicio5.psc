@@ -1,35 +1,41 @@
 // Arreglos unidimensionales, Ejercicio 5
-// Diseñar el algoritmo y la prueba de escritorio tal que dado un arreglo unidimensional de entero
+// Diseñar el algoritmo tal que dado un arreglo unidimensional de enteros
 // positivos encontrar la cantidad números primos.
 Algoritmo Ejercicio5
-	Definir vector Como Entero;
-	Definir indices Como Entero;
-	Definir contador Como Entero;
-	Definir dontador Como Entero; // i , j, contador, dontador
-	Definir indicesPrimos Como Entero;
+	Definir vector, n Como Entero;
+	Definir i, j Como Entero;
+	Definir c_primos Como Entero;
+	Definir primo Como Logico;
 	
-	Escribir "Ingrese la cantidad de índices que tendrá el vector:";
-	Leer indices;
+	Escribir "Ingrese la cantidad de indices del vector";
+	Leer n;
 	
-	indicesPrimos <- 0;
-	Dimension vector[indices];
+	Dimension vector[n];
+	c_primos <- 0;
 	
-	Para contador <- 0 Hasta indices - 1 Con Paso 1 Hacer
-		Escribir "Ingrese un valor para el índice ", contador, ":";
-		Hacer
-			Leer vector[contador];
-			Si (vector[contador] < 1) Entonces
-				Escribir "Solo se pueden ingresar valores positivos";
-				Escribir "Ingrese un valor para el índice ", contador, ":";
-			FinSi
-		Hasta Que (vector[contador] > 0)
-		Para dontador <- 2 Hasta RC(vector[contador]) Con Paso 1 Hacer
-			Si ((vector[contador] = dontador) Y (vector[contador] MOD dontador <> 0)) Entonces
-				indicesPrimos <- indicesPrimos + 1;
-			FinSi
- 		FinPara
+	Escribir "Poblando su vector.";
+	Para i <- 0 Hasta (n - 1) Con Paso 1 Hacer
+		vector[i] <- Aleatorio(1, 100);
+		Escribir Sin Saltar "Índice: ", i;
+		Escribir ", Valor: ", vector[i];
 	FinPara
 	
-	Escribir "En el vector, de ", indices, " índices, solo ", indicesPrimos, " contienen valores primos";
+	Para i <- 0 Hasta (n - 1) Con Paso 1 Hacer
+		j <- 2;
+		Si (vector[i] >= 2) Entonces
+			primo <- Verdadero;
+			Mientras (j <= RC(vector[i]) Y primo) Hacer
+				Si (vector[i] MOD j = 0) Entonces
+					primo <- Falso;
+				SiNo
+					j <- j + 1;
+				FinSi
+			FinMientras
+			Si (primo) Entonces
+				c_primos <- c_primos + 1;
+			FinSi
+		FinSi
+	FinPara
 	
-FinAlgoritmo	
+	Escribir "De un total de ", n, " índices, ", c_primos, " son primos";
+FinAlgoritmo
