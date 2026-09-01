@@ -1,8 +1,7 @@
 // Práctica Estructura Mientras, Ejercicio 2
 // Se leen N cantidad de temperaturas de una maquina (generadas con Aleatorio(30, 100)) y tienen que
 // estar dentro de los límites 50-80. Si están por debajo o por encima del rango, devuelve ERROR y se apaga.
-// Si se llega a leer N cantidad de temperaturas sin error, devuelve OK y se apaga. (Tener en cuenta que al
-// encontrar un error no debe realizar ninguna iteración más. Debe mostrar el error y salir)
+// Si se llega a leer N cantidad de temperaturas sin error, devuelve OK y se apaga.
 Algoritmo Ejercicio2
 	Definir temp Como Entero;
 	Definir cant_checks Como Entero;
