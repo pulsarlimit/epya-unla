@@ -37,7 +37,7 @@ Algoritmo EjercicioE_3
 		i <- i + 1;
 	FinMientras // Verifica si hay numeros primos en el vector.
 	Escribir "Presione Enter para continuar..."; Esperar Tecla;
-	Borrar Pantala;
+	Borrar Pantalla;
 	Escribir "Se muestra los contenidos de su vector:";
 	Para i <- 0 Hasta (n - 1) Con Paso 1 Hacer
 		Escribir "Indice: ", i, " Valor: ", vector[i];
