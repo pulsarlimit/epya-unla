@@ -1,4 +1,6 @@
-// Métodos de ordenamiento, Desafío 2 - Selectsort
+// MÃ©todos de ordenamiento, DesafÃ­o 2 - Selectsort
+// PORHACER
+// 1. Cambiar el para de la funcion selectsort por un mientras con corte para ahorrar ciclos de cpu.
 ALGORITMO Desafio2
   DEFINIR v, n COMO ENTERO;
   DEFINIR dimension_valida COMO LOGICO;
@@ -11,10 +13,10 @@ ALGORITMO Desafio2
 	ESCRIBIR SIN SALTAR "Entrada: Vector: ";
 	salida_vector(v, n);
 	selectsort(v, n);
-	ESCRIBIR SIN SALTAR "Vector ordenado ascendente por Selección: ";
+	ESCRIBIR SIN SALTAR "Vector ordenado ascendente por SelecciÃ³n: ";
 	salida_vector(v, n);
   SINO
-    ESCRIBIR "-- ERROR: SE TERMINA EL PROGRAMA POR DIMENSIÓN INVALIDA --";
+    ESCRIBIR "-- ERROR: SE TERMINA EL PROGRAMA POR DIMENSIÃ“N INVALIDA --";
   FINSI
 FINALGORITMO
 
@@ -23,16 +25,16 @@ FUNCION chequeo_dimension(n POR REFERENCIA, dimension_valida POR REFERENCIA)
 	DEFINIR sin_intentos COMO LOGICO;
 	intentos <- 3;
 	HACER
-		ESCRIBIR SIN SALTAR "Dimensión del vector? ";
+		ESCRIBIR SIN SALTAR "DimensiÃ³n del vector? ";
 		LEER n; dimension_valida <- (n > 1);
 		SI NO(dimension_valida) ENTONCES
 			intentos <- (intentos - 1);
 			sin_intentos <- (intentos = 0);
-			ESCRIBIR SIN SALTAR "ERROR: ", n, " es una dimensión invalida,";
+			ESCRIBIR SIN SALTAR "ERROR: ", n, " es una dimensiÃ³n invalida,";
 			SI NO(sin_intentos) ENTONCES
 			  ESCRIBIR " le quedan ", intentos, " intentos.";
 			SINO
-			  ESCRIBIR " se quedó sin intentos.";
+			  ESCRIBIR " se quedÃ³ sin intentos.";
 			FINSI
 		FINSI
 	HASTA QUE (dimension_valida O sin_intentos)
@@ -74,7 +76,7 @@ FUNCION selectsort(v, n)
 				ESCRIBIR "Cambio (", v[indice], ", ",v[i], ")";
 			FINSI
 		FINPARA
-		ESCRIBIR SIN SALTAR "Vector después de la primera pasada esta ordenado ascendentemente hasta ||: {";
+		ESCRIBIR SIN SALTAR "Vector despuÃ©s de la primera pasada esta ordenado ascendentemente hasta ||: {";
 		salida_intermedia_vector(v, n, permuta);
 	FINPARA
 FINFUNCION
