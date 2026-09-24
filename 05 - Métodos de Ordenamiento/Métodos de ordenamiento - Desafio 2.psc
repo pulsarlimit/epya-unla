@@ -1,6 +1,4 @@
-// MÃ©todos de ordenamiento, DesafÃ­o 2 - Selectsort
-// PORHACER
-// 1. Cambiar el para de la funcion selectsort por un mientras con corte para ahorrar ciclos de cpu.
+// Métodos de ordenamiento, Desafío 2 - Selectsort
 ALGORITMO Desafio2
   DEFINIR v, n COMO ENTERO;
   DEFINIR dimension_valida COMO LOGICO;
@@ -13,10 +11,11 @@ ALGORITMO Desafio2
 	ESCRIBIR SIN SALTAR "Entrada: Vector: ";
 	salida_vector(v, n);
 	selectsort(v, n);
-	ESCRIBIR SIN SALTAR "Vector ordenado ascendente por SelecciÃ³n: ";
+	//selectsort_optimizado(v, n);
+	ESCRIBIR SIN SALTAR "Vector ordenado ascendente por Selección: ";
 	salida_vector(v, n);
   SINO
-    ESCRIBIR "-- ERROR: SE TERMINA EL PROGRAMA POR DIMENSIÃ“N INVALIDA --";
+    ESCRIBIR "-- ERROR: SE TERMINA EL PROGRAMA POR DIMENSIÓN INVALIDA --";
   FINSI
 FINALGORITMO
 
@@ -25,16 +24,16 @@ FUNCION chequeo_dimension(n POR REFERENCIA, dimension_valida POR REFERENCIA)
 	DEFINIR sin_intentos COMO LOGICO;
 	intentos <- 3;
 	HACER
-		ESCRIBIR SIN SALTAR "DimensiÃ³n del vector? ";
+		ESCRIBIR SIN SALTAR "Dimensión del vector? ";
 		LEER n; dimension_valida <- (n > 1);
 		SI NO(dimension_valida) ENTONCES
 			intentos <- (intentos - 1);
 			sin_intentos <- (intentos = 0);
-			ESCRIBIR SIN SALTAR "ERROR: ", n, " es una dimensiÃ³n invalida,";
+			ESCRIBIR SIN SALTAR "ERROR: ", n, " es una dimensión invalida,";
 			SI NO(sin_intentos) ENTONCES
 			  ESCRIBIR " le quedan ", intentos, " intentos.";
 			SINO
-			  ESCRIBIR " se quedÃ³ sin intentos.";
+			  ESCRIBIR " se quedó sin intentos.";
 			FINSI
 		FINSI
 	HASTA QUE (dimension_valida O sin_intentos)
@@ -76,7 +75,34 @@ FUNCION selectsort(v, n)
 				ESCRIBIR "Cambio (", v[indice], ", ",v[i], ")";
 			FINSI
 		FINPARA
-		ESCRIBIR SIN SALTAR "Vector despuÃ©s de la primera pasada esta ordenado ascendentemente hasta ||: {";
+		ESCRIBIR SIN SALTAR "Vector después de la primera pasada esta ordenado ascendentemente hasta ||: {";
+		salida_intermedia_vector(v, n, permuta);
+	FINPARA
+FINFUNCION
+
+FUNCION selectsort_optimizado(v, n)
+	DEFINIR i, j COMO ENTERO;
+	DEFINIR indice, permuta COMO ENTERO;
+	DEFINIR cambios COMO LOGICO;
+	PARA i <- 0 HASTA (n - 2) CON PASO 1 HACER
+		indice <- i;
+		j <- (i + 1);
+		permuta <- 0;
+		cambios <- VERDADERO;
+		MIENTRAS (j <= (n - 1)) Y cambios HACER
+			SI (v[j] < v[i]) ENTONCES
+				indice <- j;
+				permuta <- v[indice];
+				v[indice] <- v[i];
+				v[i] <- permuta;
+				ESCRIBIR "Cambio (", v[indice], ", ", v[i], ")";
+			FINSI
+			SI (permuta = 0) ENTONCES
+				cambios <- FALSO;
+			FINSI
+			j <- j + 1;
+		FINMIENTRAS
+		ESCRIBIR SIN SALTAR "Vector después de la ", (i + 1), "º pasada esta ordenado ascendentemente hasta ||: {";
 		salida_intermedia_vector(v, n, permuta);
 	FINPARA
 FINFUNCION
