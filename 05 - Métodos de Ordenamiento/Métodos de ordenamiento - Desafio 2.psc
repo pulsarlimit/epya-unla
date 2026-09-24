@@ -1,8 +1,9 @@
 // Métodos de ordenamiento, Desafío 2 - Selectsort
 ALGORITMO Desafio2
   DEFINIR v, n COMO ENTERO;
-  DEFINIR dimension_valida COMO LOGICO;
+  DEFINIR dimension_valida, desordenado COMO LOGICO;
   n <- 0;
+  desordenado <- FALSO;
   dimension_valida <- VERDADERO; 
   chequeo_dimension(n, dimension_valida);
   SI (dimension_valida) ENTONCES
@@ -10,10 +11,12 @@ ALGORITMO Desafio2
 	entrada_vector(v, n);
 	ESCRIBIR SIN SALTAR "Entrada: Vector: ";
 	salida_vector(v, n);
-	selectsort(v, n);
-	//selectsort_optimizado(v, n);
-	ESCRIBIR SIN SALTAR "Vector ordenado ascendente por Selección: ";
-	salida_vector(v, n);
+	vector_ordenado(v, n, desordenado);
+	SI (desordenado) ENTONCES
+		selectsort(v, n);	
+		ESCRIBIR SIN SALTAR "Vector ordenado ascendente por Selección: ";
+		salida_vector(v, n);
+	FINSI
   SINO
     ESCRIBIR "-- ERROR: SE TERMINA EL PROGRAMA POR DIMENSIÓN INVALIDA --";
   FINSI
@@ -46,6 +49,18 @@ FUNCION entrada_vector(v, n)
 	FINPARA
 FINFUNCION
 
+FUNCION vector_ordenado(v, n, desordenado POR REFERENCIA)
+	DEFINIR i COMO ENTERO;
+	desordenado <- VERDADERO;
+	PARA i <- 0 HASTA (n - 2) CON PASO 1 HACER
+		SI (v[i] <= v[i + 1]) ENTONCES
+		  desordenado <- FALSO;
+		SINO
+		  desordenado <- VERDADERO;
+		FINSI
+	FINPARA
+FINFUNCION	
+
 FUNCION salida_vector(v, n)
 	DEFINIR i COMO ENTERO;
 	PARA i <- 0 HASTA (n - 1) CON PASO 1 HACER
@@ -73,37 +88,14 @@ FUNCION selectsort(v, n)
 				v[indice] <- v[i];
 				v[i] <- permuta;
 				ESCRIBIR "Cambio (", v[indice], ", ",v[i], ")";
+			SINO
+				permuta <- -1;
 			FINSI
 		FINPARA
-		ESCRIBIR SIN SALTAR "Vector después de la primera pasada esta ordenado ascendentemente hasta ||: {";
-		salida_intermedia_vector(v, n, permuta);
-	FINPARA
-FINFUNCION
-
-FUNCION selectsort_optimizado(v, n)
-	DEFINIR i, j COMO ENTERO;
-	DEFINIR indice, permuta COMO ENTERO;
-	DEFINIR cambios COMO LOGICO;
-	PARA i <- 0 HASTA (n - 2) CON PASO 1 HACER
-		indice <- i;
-		j <- (i + 1);
-		permuta <- 0;
-		cambios <- VERDADERO;
-		MIENTRAS (j <= (n - 1)) Y cambios HACER
-			SI (v[j] < v[i]) ENTONCES
-				indice <- j;
-				permuta <- v[indice];
-				v[indice] <- v[i];
-				v[i] <- permuta;
-				ESCRIBIR "Cambio (", v[indice], ", ", v[i], ")";
-			FINSI
-			SI (permuta = 0) ENTONCES
-				cambios <- FALSO;
-			FINSI
-			j <- j + 1;
-		FINMIENTRAS
-		ESCRIBIR SIN SALTAR "Vector después de la ", (i + 1), "º pasada esta ordenado ascendentemente hasta ||: {";
-		salida_intermedia_vector(v, n, permuta);
+		SI (permuta <> -1) ENTONCES
+		 ESCRIBIR SIN SALTAR "Vector después de la primera pasada esta ordenado ascendentemente hasta ||: {";
+		 salida_intermedia_vector(v, n, permuta);
+		FINSI
 	FINPARA
 FINFUNCION
 
@@ -111,7 +103,7 @@ FUNCION salida_intermedia_vector(v, n, permuta)
 	DEFINIR i COMO ENTERO;
 	PARA i <- 0 HASTA (n - 1) CON PASO 1 HACER
 		SI (i < (n - 1)) ENTONCES
-			SI (v[i] = permuta) ENTONCES
+			SI (v[i] < v[i + 1]) Y (permuta <> -1) ENTONCES
 				ESCRIBIR SIN SALTAR v[i], ",|| ";
 			SINO
 				ESCRIBIR SIN SALTAR v[i], ", ";
