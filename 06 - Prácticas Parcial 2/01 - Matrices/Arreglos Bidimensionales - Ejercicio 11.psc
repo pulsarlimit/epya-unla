@@ -59,18 +59,14 @@ ALGORITMO Ejercicio11
 		FINPARA
 		ESCRIBIR "PUNTO 3 (CÁLCULO DE AMPLITUDES POR CIUDAD)";
 		PARA i <- 0 HASTA (n - 1) CON PASO 1 HACER
-			SI (i = 0) ENTONCES
-				maxAmplitud <- arreglo[i];
-				ciudadMaxAmplitud <- i;
-			SINO
-				SI (maxAmplitud < arreglo[i]) ENTONCES
-					maxAmplitud <- arreglo[i];
-					ciudadMaxAmplitud <- i;
-				FINSI
-			FINSI
 				ESCRIBIR "Ciudad ", (i + 1), " -> amplitud (max-min):", arreglo[i], ".";
 		FINPARA
 		ESCRIBIR "PUNTO 4 (CIUDAD CON MAYOR AMPLITUD ENTRE SUS PUEBLOS)";
+		PARA i <- 0 HASTA (filasColumnas - 2) CON PASO 1 HACER
+			PARA j <- 0 HASTA (filasColumnas - 1) CON PASO 1 HACER
+				amplitud
+			FINPARA
+		FINPARA
 		ESCRIBIR "La ciudad con mayor amplitud entre todos sus pueblos es la ciudad ", ciudadMaxAmplitud;
 		ESCRIBIR " (considerada la más grande) con una amplitud intra-pueblos de  
 	FINSI
